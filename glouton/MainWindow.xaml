@@ -5,8 +5,62 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:glouton"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="L'API du Glouton" Height="600" Width="1000" Background="#8B0000">
+    <Grid Margin="10">
+        <!-- Barre de recherche -->
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Margin="0,0,0,20">
+            <Border CornerRadius="10" Background="White" HorizontalAlignment="Left" Width="300" Padding="5">
+                <DockPanel>
+                    <TextBox Name="SearchTextBox" Width="200" Height="25" Margin="10"/>
+                    <Button Content="🔍" Width="100" Height="25" Margin="-15" Background="White" Click="SearchButton_Click"/>
+                    <ListBox Name="ResultsListBox" Width="300" Height="30" Margin="0"/>
+                </DockPanel>
+            </Border>
+        </Grid>
+
+        <!-- Conteneur Principal -->
+        <Grid Margin="0,50,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1.5*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Informations -->
+            <Border Grid.Column="0" Background="#BFBFBF" Padding="10" Margin="10" CornerRadius="5">
+                <StackPanel>
+                    <TextBlock Text="Informations :" FontWeight="Bold" Margin="0,0,0,10" />
+                    <TextBlock Text="Poids/Quantité" />
+                    <TextBlock Text="Conditionnement" />
+                    <TextBlock Text="Nutri-Score" />
+                    <TextBlock Text="Catégorie" />
+                    <TextBlock Text="Certifications" />
+                    <TextBlock Text="Pays de vente" />
+                </StackPanel>
+            </Border>
+
+            <!-- Apports Nutritionnels -->
+            <Border Grid.Column="1" Background="#BFBFBF" Padding="10" Margin="10,10,10,10" CornerRadius="5">
+                <StackPanel>
+                    <TextBlock Text="Apports Nutritionnels :" FontWeight="Bold" Margin="0,0,0,10" />
+                    <TextBlock Text="Gras" />
+                    <TextBlock Text="Gras Saturés" />
+                    <TextBlock Text="Sel" />
+                    <TextBlock Text="Sucre" />
+                    <TextBlock Text="Protéines" />
+                    <TextBlock Text="Kcal" />
+                </StackPanel>
+            </Border>
+
+            <!-- Image -->
+            <Border Grid.Column="2" Background="Transparent" Margin="10">
+                <Image Source="gupitaro.jpg" Stretch="Uniform" />
+            </Border>
+        </Grid>
+
+        <!-- Footer -->
+        <TextBlock Text="© 2024 Kasai Ali et Roux-Decorzent Léopold | Using OpenFoodFacts API"
+                   Foreground="Yellow" HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                   Margin="0,10,0,0" />
     </Grid>
 </Window>
