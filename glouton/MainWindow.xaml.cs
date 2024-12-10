@@ -8,4 +8,23 @@ using OpenFoodFactsCSharp.Models;
 
 namespace OpenFoodFactsCSharp.Clients
 
-public partial class MainWindow : Window
+{
+    public partial class MainWindow : Window
+    { 
+
+      private void BTN_Click(object sender, RoutedEventArgs e)
+        {
+            // TODO: Add code for button click event
+        }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    }
+}
