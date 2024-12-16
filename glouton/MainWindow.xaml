@@ -13,7 +13,7 @@
         </Style>
     </Window.Resources>
 
-    <Grid Margin="10">
+    <Grid x:Name="MainGrid" Margin="10">
         <!-- Titre -->
         <TextBlock Text="Le guide du Glouton"
                    Style="{StaticResource LuckiestGuyFontStyle}"
