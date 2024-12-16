@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:glouton"
         mc:Ignorable="d"
-        Title="L'API du Glouton" Height="600" Width="1000" Background="#8B0000">
+        Title="L'API du Glouton" Height="600" Width="1000" Background="#8A1F1F">
     <Window.Resources>
         <!-- Police personnalisée -->
         <Style x:Key="LuckiestGuyFontStyle" TargetType="TextBlock">
