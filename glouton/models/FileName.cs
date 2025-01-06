@@ -12,75 +12,75 @@ namespace glouton.Models
         public class _1
         {
             public Sizes sizes { get; set; }
-            public int uploaded_t { get; set; }
+            public double? uploaded_t { get; set; }
             public string uploader { get; set; }
         }
 
         public class _100
         {
-            public int h { get; set; }
-            public int w { get; set; }
+            public double? h { get; set; }
+            public double? w { get; set; }
         }
 
         public class _2
         {
             public Sizes sizes { get; set; }
-            public int uploaded_t { get; set; }
+            public double? uploaded_t { get; set; }
             public string uploader { get; set; }
         }
 
         public class _200
         {
-            public int h { get; set; }
-            public int w { get; set; }
+            public double? h { get; set; }
+            public double? w { get; set; }
         }
 
         public class _2021
         {
-            public int category_available { get; set; }
+            public double? category_available { get; set; }
             public Data data { get; set; }
             public string grade { get; set; }
-            public int nutrients_available { get; set; }
-            public int nutriscore_applicable { get; set; }
-            public int nutriscore_computed { get; set; }
-            public int score { get; set; }
+            public double? nutrients_available { get; set; }
+            public double? nutriscore_applicable { get; set; }
+            public double? nutriscore_computed { get; set; }
+            public double? score { get; set; }
         }
 
         public class _2023
         {
-            public int category_available { get; set; }
+            public double? category_available { get; set; }
             public Data data { get; set; }
             public string grade { get; set; }
-            public int nutrients_available { get; set; }
-            public int nutriscore_applicable { get; set; }
-            public int nutriscore_computed { get; set; }
-            public int score { get; set; }
+            public double? nutrients_available { get; set; }
+            public double? nutriscore_applicable { get; set; }
+            public double? nutriscore_computed { get; set; }
+            public double? score { get; set; }
         }
 
         public class _3
         {
             public Sizes sizes { get; set; }
-            public int uploaded_t { get; set; }
+            public double? uploaded_t { get; set; }
             public string uploader { get; set; }
         }
 
         public class _4
         {
             public Sizes sizes { get; set; }
-            public int uploaded_t { get; set; }
+            public double? uploaded_t { get; set; }
             public string uploader { get; set; }
         }
 
         public class _400
         {
-            public int h { get; set; }
-            public int w { get; set; }
+            public double? h { get; set; }
+            public double? w { get; set; }
         }
 
         public class _5
         {
             public Sizes sizes { get; set; }
-            public int uploaded_t { get; set; }
+            public double? uploaded_t { get; set; }
             public string uploader { get; set; }
         }
 
@@ -104,41 +104,41 @@ namespace glouton.Models
 
         public class Data
         {
-            public int energy { get; set; }
-            public int energy_points { get; set; }
-            public int energy_value { get; set; }
-            public double fiber { get; set; }
-            public int fiber_points { get; set; }
-            public double fiber_value { get; set; }
-            public double fruits_vegetables_nuts_colza_walnut_olive_oils { get; set; }
-            public int fruits_vegetables_nuts_colza_walnut_olive_oils_points { get; set; }
-            public int fruits_vegetables_nuts_colza_walnut_olive_oils_value { get; set; }
-            public int is_beverage { get; set; }
-            public int is_cheese { get; set; }
-            public int is_fat { get; set; }
-            public int is_water { get; set; }
-            public int negative_points { get; set; }
-            public int positive_points { get; set; }
-            public double proteins { get; set; }
-            public int proteins_points { get; set; }
-            public double proteins_value { get; set; }
-            public double saturated_fat { get; set; }
-            public int saturated_fat_points { get; set; }
-            public double saturated_fat_value { get; set; }
-            public int sodium { get; set; }
-            public int sodium_points { get; set; }
-            public int sodium_value { get; set; }
-            public double sugars { get; set; }
-            public int sugars_points { get; set; }
-            public double sugars_value { get; set; }
+            public double? energy { get; set; }
+            public double? energy_points { get; set; }
+            public double? energy_value { get; set; }
+            public double? fiber { get; set; }
+            public double? fiber_points { get; set; }
+            public double? fiber_value { get; set; }
+            public double? fruits_vegetables_nuts_colza_walnut_olive_oils { get; set; }
+            public double? fruits_vegetables_nuts_colza_walnut_olive_oils_points { get; set; }
+            public double? fruits_vegetables_nuts_colza_walnut_olive_oils_value { get; set; }
+            public double? is_beverage { get; set; }
+            public double? is_cheese { get; set; }
+            public double? is_fat { get; set; }
+            public double? is_water { get; set; }
+            public double? negative_points { get; set; }
+            public double? positive_points { get; set; }
+            public double? proteins { get; set; }
+            public double? proteins_points { get; set; }
+            public double? proteins_value { get; set; }
+            public double? saturated_fat { get; set; }
+            public double? saturated_fat_points { get; set; }
+            public double? saturated_fat_value { get; set; }
+            public double? sodium { get; set; }
+            public double? sodium_points { get; set; }
+            public double? sodium_value { get; set; }
+            public double? sugars { get; set; }
+            public double? sugars_points { get; set; }
+            public double? sugars_value { get; set; }
             public Components components { get; set; }
-            public int count_proteins { get; set; }
+            public double? count_proteins { get; set; }
             public string count_proteins_reason { get; set; }
-            public int is_fat_oil_nuts_seeds { get; set; }
-            public int is_red_meat_product { get; set; }
-            public int negative_points_max { get; set; }
+            public double? is_fat_oil_nuts_seeds { get; set; }
+            public double? is_red_meat_product { get; set; }
+            public double? negative_points_max { get; set; }
             public List<string> positive_nutrients { get; set; }
-            public int positive_points_max { get; set; }
+            public double? positive_points_max { get; set; }
         }
 
         public class Display
@@ -175,8 +175,8 @@ namespace glouton.Models
 
         public class Full
         {
-            public int h { get; set; }
-            public int w { get; set; }
+            public double? h { get; set; }
+            public double? w { get; set; }
         }
 
         public class Images
@@ -206,10 +206,10 @@ namespace glouton.Models
         {
             public string id { get; set; }
             public List<Ingredient> ingredients { get; set; }
-            public int is_in_taxonomy { get; set; }
-            public int percent_estimate { get; set; }
-            public int percent_max { get; set; }
-            public int percent_min { get; set; }
+            public double? is_in_taxonomy { get; set; }
+            public double? percent_estimate { get; set; }
+            public double percent_max { get; set; }
+            public double? percent_min { get; set; }
             public string text { get; set; }
             public string vegan { get; set; }
             public string vegetarian { get; set; }
@@ -253,21 +253,21 @@ namespace glouton.Models
         public class Languages
         {
             [JsonProperty("en:english")]
-            public int enenglish { get; set; }
+            public double? enenglish { get; set; }
         }
 
         public class LanguagesCodes
         {
-            public int en { get; set; }
+            public double? en { get; set; }
         }
 
         public class Negative
         {
             public string id { get; set; }
-            public int points { get; set; }
-            public int points_max { get; set; }
+            public double? points { get; set; }
+            public double? points_max { get; set; }
             public string unit { get; set; }
-            public double value { get; set; }
+            public double? value { get; set; }
         }
 
         public class NovaGroupsMarkers
@@ -291,166 +291,166 @@ namespace glouton.Models
 
         public class Nutriments
         {
-            public double calcium { get; set; }
-            public double calcium_100g { get; set; }
-            public double calcium_serving { get; set; }
+            public double? calcium { get; set; }
+            public double? calcium_100g { get; set; }
+            public double? calcium_serving { get; set; }
             public string calcium_unit { get; set; }
-            public int calcium_value { get; set; }
-            public double carbohydrates { get; set; }
-            public double carbohydrates_100g { get; set; }
-            public int carbohydrates_serving { get; set; }
+            public double? calcium_value { get; set; }
+            public double? carbohydrates { get; set; }
+            public double? carbohydrates_100g { get; set; }
+            public double? carbohydrates_serving { get; set; }
             public string carbohydrates_unit { get; set; }
-            public double carbohydrates_value { get; set; }
-            public int cholesterol { get; set; }
-            public int cholesterol_100g { get; set; }
-            public int cholesterol_serving { get; set; }
+            public double? carbohydrates_value { get; set; }
+            public double? cholesterol { get; set; }
+            public double? cholesterol_100g { get; set; }
+            public double? cholesterol_serving { get; set; }
             public string cholesterol_unit { get; set; }
-            public int cholesterol_value { get; set; }
-            public int energy { get; set; }
+            public double? cholesterol_value { get; set; }
+            public double? energy { get; set; }
 
             [JsonProperty("energy-kcal")]
-            public int energykcal { get; set; }
+            public double? energykcal { get; set; }
 
             [JsonProperty("energy-kcal_100g")]
-            public int energykcal_100g { get; set; }
+            public double? energykcal_100g { get; set; }
 
             [JsonProperty("energy-kcal_serving")]
-            public int energykcal_serving { get; set; }
+            public double? energykcal_serving { get; set; }
 
             [JsonProperty("energy-kcal_unit")]
             public string energykcal_unit { get; set; }
 
             [JsonProperty("energy-kcal_value")]
-            public int energykcal_value { get; set; }
+            public double? energykcal_value { get; set; }
 
             [JsonProperty("energy-kcal_value_computed")]
-            public double energykcal_value_computed { get; set; }
-            public int energy_100g { get; set; }
-            public int energy_serving { get; set; }
+            public double? energykcal_value_computed { get; set; }
+            public double? energy_100g { get; set; }
+            public double? energy_serving { get; set; }
             public string energy_unit { get; set; }
-            public int energy_value { get; set; }
-            public double fat { get; set; }
-            public double fat_100g { get; set; }
-            public int fat_serving { get; set; }
+            public double? energy_value { get; set; }
+            public double? fat { get; set; }
+            public double? fat_100g { get; set; }
+            public double? fat_serving { get; set; }
             public string fat_unit { get; set; }
-            public double fat_value { get; set; }
-            public double fiber { get; set; }
-            public double fiber_100g { get; set; }
-            public double fiber_serving { get; set; }
+            public double? fat_value { get; set; }
+            public double? fiber { get; set; }
+            public double? fiber_100g { get; set; }
+            public double? fiber_serving { get; set; }
             public string fiber_unit { get; set; }
-            public double fiber_value { get; set; }
+            public double? fiber_value { get; set; }
 
             [JsonProperty("fruits-vegetables-legumes-estimate-from-ingredients_100g")]
-            public double fruitsvegetableslegumesestimatefromingredients_100g { get; set; }
+            public double? fruitsvegetableslegumesestimatefromingredients_100g { get; set; }
 
             [JsonProperty("fruits-vegetables-legumes-estimate-from-ingredients_serving")]
-            public double fruitsvegetableslegumesestimatefromingredients_serving { get; set; }
+            public double? fruitsvegetableslegumesestimatefromingredients_serving { get; set; }
 
             [JsonProperty("fruits-vegetables-nuts-estimate-from-ingredients_100g")]
-            public double fruitsvegetablesnutsestimatefromingredients_100g { get; set; }
+            public double? fruitsvegetablesnutsestimatefromingredients_100g { get; set; }
 
             [JsonProperty("fruits-vegetables-nuts-estimate-from-ingredients_serving")]
-            public double fruitsvegetablesnutsestimatefromingredients_serving { get; set; }
-            public double iron { get; set; }
-            public double iron_100g { get; set; }
-            public double iron_serving { get; set; }
+            public double? fruitsvegetablesnutsestimatefromingredients_serving { get; set; }
+            public double? iron { get; set; }
+            public double? iron_100g { get; set; }
+            public double? iron_serving { get; set; }
             public string iron_unit { get; set; }
-            public double iron_value { get; set; }
+            public double? iron_value { get; set; }
 
             [JsonProperty("nova-group")]
-            public int novagroup { get; set; }
+            public double? novagroup { get; set; }
 
             [JsonProperty("nova-group_100g")]
-            public int novagroup_100g { get; set; }
+            public double? novagroup_100g { get; set; }
 
             [JsonProperty("nova-group_serving")]
-            public int novagroup_serving { get; set; }
+            public double? novagroup_serving { get; set; }
 
             [JsonProperty("nutrition-score-fr")]
-            public int nutritionscorefr { get; set; }
+            public double? nutritionscorefr { get; set; }
 
             [JsonProperty("nutrition-score-fr_100g")]
-            public int nutritionscorefr_100g { get; set; }
-            public double proteins { get; set; }
-            public double proteins_100g { get; set; }
-            public int proteins_serving { get; set; }
+            public double? nutritionscorefr_100g { get; set; }
+            public double? proteins { get; set; }
+            public double? proteins_100g { get; set; }
+            public double? proteins_serving { get; set; }
             public string proteins_unit { get; set; }
-            public double proteins_value { get; set; }
-            public double salt { get; set; }
-            public double salt_100g { get; set; }
-            public double salt_serving { get; set; }
+            public double? proteins_value { get; set; }
+            public double? salt { get; set; }
+            public double? salt_100g { get; set; }
+            public double? salt_serving { get; set; }
             public string salt_unit { get; set; }
-            public int salt_value { get; set; }
+            public double? salt_value { get; set; }
 
             [JsonProperty("saturated-fat")]
-            public double saturatedfat { get; set; }
+            public double? saturatedfat { get; set; }
 
             [JsonProperty("saturated-fat_100g")]
-            public double saturatedfat_100g { get; set; }
+            public double? saturatedfat_100g { get; set; }
 
             [JsonProperty("saturated-fat_serving")]
-            public double saturatedfat_serving { get; set; }
+            public double? saturatedfat_serving { get; set; }
 
             [JsonProperty("saturated-fat_unit")]
             public string saturatedfat_unit { get; set; }
 
             [JsonProperty("saturated-fat_value")]
-            public double saturatedfat_value { get; set; }
-            public double sodium { get; set; }
-            public double sodium_100g { get; set; }
-            public double sodium_serving { get; set; }
+            public double? saturatedfat_value { get; set; }
+            public double? sodium { get; set; }
+            public double? sodium_100g { get; set; }
+            public double? sodium_serving { get; set; }
             public string sodium_unit { get; set; }
-            public int sodium_value { get; set; }
-            public double sugars { get; set; }
-            public double sugars_100g { get; set; }
-            public int sugars_serving { get; set; }
+            public double? sodium_value { get; set; }
+            public double? sugars { get; set; }
+            public double? sugars_100g { get; set; }
+            public double? sugars_serving { get; set; }
             public string sugars_unit { get; set; }
-            public double sugars_value { get; set; }
+            public double? sugars_value { get; set; }
 
             [JsonProperty("trans-fat")]
-            public int transfat { get; set; }
+            public double? transfat { get; set; }
 
             [JsonProperty("trans-fat_100g")]
-            public int transfat_100g { get; set; }
+            public double? transfat_100g { get; set; }
 
             [JsonProperty("trans-fat_serving")]
-            public int transfat_serving { get; set; }
+            public double? transfat_serving { get; set; }
 
             [JsonProperty("trans-fat_unit")]
             public string transfat_unit { get; set; }
 
             [JsonProperty("trans-fat_value")]
-            public int transfat_value { get; set; }
+            public double? transfat_value { get; set; }
 
             [JsonProperty("vitamin-a")]
-            public double vitamina { get; set; }
+            public double? vitamina { get; set; }
 
             [JsonProperty("vitamin-a_100g")]
-            public double vitamina_100g { get; set; }
+            public double? vitamina_100g { get; set; }
 
             [JsonProperty("vitamin-a_serving")]
-            public double vitamina_serving { get; set; }
+            public double? vitamina_serving { get; set; }
 
             [JsonProperty("vitamin-a_unit")]
             public string vitamina_unit { get; set; }
 
             [JsonProperty("vitamin-a_value")]
-            public int vitamina_value { get; set; }
+            public double? vitamina_value { get; set; }
 
             [JsonProperty("vitamin-c")]
-            public int vitaminc { get; set; }
+            public double? vitaminc { get; set; }
 
             [JsonProperty("vitamin-c_100g")]
-            public int vitaminc_100g { get; set; }
+            public double? vitaminc_100g { get; set; }
 
             [JsonProperty("vitamin-c_serving")]
-            public int vitaminc_serving { get; set; }
+            public double? vitaminc_serving { get; set; }
 
             [JsonProperty("vitamin-c_unit")]
             public string vitaminc_unit { get; set; }
 
             [JsonProperty("vitamin-c_value")]
-            public int vitaminc_value { get; set; }
+            public double? vitaminc_value { get; set; }
         }
 
         public class Nutriscore
@@ -465,20 +465,20 @@ namespace glouton.Models
         public class NutriscoreData
         {
             public Components components { get; set; }
-            public int count_proteins { get; set; }
+            public double? count_proteins { get; set; }
             public string count_proteins_reason { get; set; }
             public string grade { get; set; }
-            public int is_beverage { get; set; }
-            public int is_cheese { get; set; }
-            public int is_fat_oil_nuts_seeds { get; set; }
-            public int is_red_meat_product { get; set; }
-            public int is_water { get; set; }
-            public int negative_points { get; set; }
-            public int negative_points_max { get; set; }
+            public double? is_beverage { get; set; }
+            public double? is_cheese { get; set; }
+            public double? is_fat_oil_nuts_seeds { get; set; }
+            public double? is_red_meat_product { get; set; }
+            public double? is_water { get; set; }
+            public double? negative_points { get; set; }
+            public double? negative_points_max { get; set; }
             public List<string> positive_nutrients { get; set; }
-            public int positive_points { get; set; }
-            public int positive_points_max { get; set; }
-            public int score { get; set; }
+            public double? positive_points { get; set; }
+            public double? positive_points_max { get; set; }
+            public double? score { get; set; }
         }
 
         public class Nutrition
@@ -530,10 +530,10 @@ namespace glouton.Models
         public class Positive
         {
             public string id { get; set; }
-            public int points { get; set; }
-            public int points_max { get; set; }
+            public double? points { get; set; }
+            public double? points_max { get; set; }
             public string unit { get; set; }
-            public double value { get; set; }
+            public double? value { get; set; }
         }
 
         public class Product
@@ -541,7 +541,7 @@ namespace glouton.Models
             public string _id { get; set; }
             public List<string> _keywords { get; set; }
             public List<object> added_countries_tags { get; set; }
-            public int additives_n { get; set; }
+            public double? additives_n { get; set; }
             public List<string> additives_original_tags { get; set; }
             public List<string> additives_tags { get; set; }
             public string allergens { get; set; }
@@ -572,8 +572,8 @@ namespace glouton.Models
             public string code { get; set; }
             public List<string> codes_tags { get; set; }
             public string compared_to_category { get; set; }
-            public int complete { get; set; }
-            public double completeness { get; set; }
+            public double? complete { get; set; }
+            public double? completeness { get; set; }
             public List<string> correctors { get; set; }
             public List<string> correctors_tags { get; set; }
             public string countries { get; set; }
@@ -581,7 +581,7 @@ namespace glouton.Models
             public string countries_imported { get; set; }
             public string countries_lc { get; set; }
             public List<string> countries_tags { get; set; }
-            public int created_t { get; set; }
+            public double? created_t { get; set; }
             public string creator { get; set; }
             public List<object> data_quality_bugs_tags { get; set; }
             public List<object> data_quality_errors_tags { get; set; }
@@ -604,7 +604,7 @@ namespace glouton.Models
             public List<string> food_groups_tags { get; set; }
 
             [JsonProperty("fruits-vegetables-nuts_100g_estimate")]
-            public int fruitsvegetablesnuts_100g_estimate { get; set; }
+            public double? fruitsvegetablesnuts_100g_estimate { get; set; }
             public string generic_name { get; set; }
             public string generic_name_en { get; set; }
             public string id { get; set; }
@@ -627,18 +627,18 @@ namespace glouton.Models
             public IngredientsAnalysis ingredients_analysis { get; set; }
             public List<string> ingredients_analysis_tags { get; set; }
             public List<string> ingredients_debug { get; set; }
-            public int ingredients_from_or_that_may_be_from_palm_oil_n { get; set; }
-            public int ingredients_from_palm_oil_n { get; set; }
+            public double? ingredients_from_or_that_may_be_from_palm_oil_n { get; set; }
+            public double? ingredients_from_palm_oil_n { get; set; }
             public List<object> ingredients_from_palm_oil_tags { get; set; }
             public List<string> ingredients_hierarchy { get; set; }
             public List<string> ingredients_ids_debug { get; set; }
             public string ingredients_lc { get; set; }
-            public int ingredients_n { get; set; }
+            public double? ingredients_n { get; set; }
             public List<string> ingredients_n_tags { get; set; }
-            public int ingredients_non_nutritive_sweeteners_n { get; set; }
+            public double? ingredients_non_nutritive_sweeteners_n { get; set; }
             public List<string> ingredients_original_tags { get; set; }
-            public int ingredients_percent_analysis { get; set; }
-            public int ingredients_sweeteners_n { get; set; }
+            public double? ingredients_percent_analysis { get; set; }
+            public double? ingredients_sweeteners_n { get; set; }
             public List<string> ingredients_tags { get; set; }
             public string ingredients_text { get; set; }
             public string ingredients_text_debug { get; set; }
@@ -646,19 +646,19 @@ namespace glouton.Models
             public string ingredients_text_en_imported { get; set; }
             public string ingredients_text_with_allergens { get; set; }
             public string ingredients_text_with_allergens_en { get; set; }
-            public int ingredients_that_may_be_from_palm_oil_n { get; set; }
+            public double? ingredients_that_may_be_from_palm_oil_n { get; set; }
             public List<object> ingredients_that_may_be_from_palm_oil_tags { get; set; }
-            public int ingredients_with_specified_percent_n { get; set; }
-            public int ingredients_with_specified_percent_sum { get; set; }
-            public int ingredients_with_unspecified_percent_n { get; set; }
-            public int ingredients_with_unspecified_percent_sum { get; set; }
+            public double? ingredients_with_specified_percent_n { get; set; }
+            public double? ingredients_with_specified_percent_sum { get; set; }
+            public double? ingredients_with_unspecified_percent_n { get; set; }
+            public double? ingredients_with_unspecified_percent_sum { get; set; }
             public List<string> ingredients_without_ciqual_codes { get; set; }
-            public int ingredients_without_ciqual_codes_n { get; set; }
+            public double? ingredients_without_ciqual_codes_n { get; set; }
             public List<string> ingredients_without_ecobalyse_ids { get; set; }
-            public int ingredients_without_ecobalyse_ids_n { get; set; }
+            public double? ingredients_without_ecobalyse_ids_n { get; set; }
             public string interface_version_created { get; set; }
             public string interface_version_modified { get; set; }
-            public int known_ingredients_n { get; set; }
+            public double? known_ingredients_n { get; set; }
             public string labels { get; set; }
             public List<string> labels_hierarchy { get; set; }
             public string labels_lc { get; set; }
@@ -672,10 +672,10 @@ namespace glouton.Models
             public List<string> last_edit_dates_tags { get; set; }
             public string last_editor { get; set; }
             public List<string> last_image_dates_tags { get; set; }
-            public int last_image_t { get; set; }
+            public double? last_image_t { get; set; }
             public string last_modified_by { get; set; }
-            public int last_modified_t { get; set; }
-            public int last_updated_t { get; set; }
+            public double? last_modified_t { get; set; }
+            public double? last_updated_t { get; set; }
             public string lc { get; set; }
             public string lc_imported { get; set; }
             public string link { get; set; }
@@ -687,7 +687,7 @@ namespace glouton.Models
             public List<object> minerals_tags { get; set; }
             public List<string> misc_tags { get; set; }
             public string no_nutrition_data { get; set; }
-            public int nova_group { get; set; }
+            public double? nova_group { get; set; }
             public string nova_group_debug { get; set; }
             public string nova_groups { get; set; }
             public NovaGroupsMarkers nova_groups_markers { get; set; }
@@ -702,8 +702,8 @@ namespace glouton.Models
             public List<string> nutriscore_2023_tags { get; set; }
             public NutriscoreData nutriscore_data { get; set; }
             public string nutriscore_grade { get; set; }
-            public int nutriscore_score { get; set; }
-            public int nutriscore_score_opposite { get; set; }
+            public double? nutriscore_score { get; set; }
+            public double? nutriscore_score_opposite { get; set; }
             public List<string> nutriscore_tags { get; set; }
             public string nutriscore_version { get; set; }
             public string nutrition_data { get; set; }
@@ -715,12 +715,12 @@ namespace glouton.Models
             public string nutrition_grade_fr { get; set; }
             public string nutrition_grades { get; set; }
             public List<string> nutrition_grades_tags { get; set; }
-            public int nutrition_score_beverage { get; set; }
+            public double? nutrition_score_beverage { get; set; }
             public string nutrition_score_debug { get; set; }
-            public int nutrition_score_warning_fruits_vegetables_legumes_estimate_from_ingredients { get; set; }
-            public double nutrition_score_warning_fruits_vegetables_legumes_estimate_from_ingredients_value { get; set; }
-            public int nutrition_score_warning_fruits_vegetables_nuts_estimate_from_ingredients { get; set; }
-            public double nutrition_score_warning_fruits_vegetables_nuts_estimate_from_ingredients_value { get; set; }
+            public double? nutrition_score_warning_fruits_vegetables_legumes_estimate_from_ingredients { get; set; }
+            public double? nutrition_score_warning_fruits_vegetables_legumes_estimate_from_ingredients_value { get; set; }
+            public double? nutrition_score_warning_fruits_vegetables_nuts_estimate_from_ingredients { get; set; }
+            public double? nutrition_score_warning_fruits_vegetables_nuts_estimate_from_ingredients_value { get; set; }
             public string obsolete { get; set; }
             public string obsolete_since_date { get; set; }
             public string origin { get; set; }
@@ -743,9 +743,9 @@ namespace glouton.Models
             public string packaging_text { get; set; }
             public string packaging_text_en { get; set; }
             public List<Packaging> packagings { get; set; }
-            public int packagings_complete { get; set; }
+            public double? packagings_complete { get; set; }
             public PackagingsMaterials packagings_materials { get; set; }
-            public int packagings_n { get; set; }
+            public double? packagings_n { get; set; }
             public List<string> photographers { get; set; }
             public List<string> photographers_tags { get; set; }
             public string pnns_groups_1 { get; set; }
@@ -764,14 +764,14 @@ namespace glouton.Models
             public List<object> purchase_places_tags { get; set; }
             public string quantity { get; set; }
             public List<object> removed_countries_tags { get; set; }
-            public int rev { get; set; }
-            public int scans_n { get; set; }
+            public double? rev { get; set; }
+            public double? scans_n { get; set; }
             public SelectedImages selected_images { get; set; }
             public string serving_quantity { get; set; }
             public string serving_quantity_unit { get; set; }
             public string serving_size { get; set; }
             public string serving_size_imported { get; set; }
-            public int sortkey { get; set; }
+            public double? sortkey { get; set; }
             public List<Source> sources { get; set; }
             public SourcesFields sources_fields { get; set; }
             public string states { get; set; }
@@ -787,8 +787,8 @@ namespace glouton.Models
             public List<string> traces_hierarchy { get; set; }
             public string traces_lc { get; set; }
             public List<string> traces_tags { get; set; }
-            public int unique_scans_n { get; set; }
-            public int unknown_ingredients_n { get; set; }
+            public double? unique_scans_n { get; set; }
+            public double? unknown_ingredients_n { get; set; }
             public List<object> unknown_nutrients_tags { get; set; }
             public string update_key { get; set; }
             public List<object> vitamins_prev_tags { get; set; }
@@ -800,7 +800,7 @@ namespace glouton.Models
         {
             public string code { get; set; }
             public Product product { get; set; }
-            public int status { get; set; }
+            public double? status { get; set; }
             public string status_verbose { get; set; }
         }
 
@@ -833,7 +833,7 @@ namespace glouton.Models
             public List<string> fields { get; set; }
             public string id { get; set; }
             public List<object> images { get; set; }
-            public int import_t { get; set; }
+            public double? import_t { get; set; }
             public string url { get; set; }
             public object manufacturer { get; set; }
             public string name { get; set; }

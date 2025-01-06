@@ -24,8 +24,8 @@
         <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Margin="0,60,0,20">
             <Border CornerRadius="10" Background="White" HorizontalAlignment="Left" Width="400" Padding="5">
                 <DockPanel>
-                    <TextBox Name="SearchTextBox" Width="250" Height="30" Margin="10"/>
-                    <Button Content="🔍" Width="80" Height="30" Margin="-15" Background="White"/>
+                    <TextBox Name="SearchTextBox" Width="250" Height="30" Margin="10" TextChanged="SearchTextBox_TextChanged"/>
+                    <Button Content="🔍" Width="80" Height="30" Margin="-15" Background="White" Click="Button_Click"/>
                 </DockPanel>
             </Border>
         </Grid>

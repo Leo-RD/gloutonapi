@@ -28,7 +28,7 @@ namespace glouton
 
             HttpClient client = new HttpClient();
 
-            HttpResponseMessage response = await client.GetAsync($"https://world.openfoodfacts.org/api/v2/product/3017620425035.json");
+            HttpResponseMessage response = await client.GetAsync($"https://world.openfoodfacts.org/api/v2/product/{code}.json");
 
             if (response.IsSuccessStatusCode)
             {
@@ -49,15 +49,15 @@ namespace glouton
                 TB_Name.Text = $"Nom : {BarCode.product.product_name}";
                 TB_weight.Text = $"Poids :{BarCode.product.product_quantity}g";
                 TB_package.Text = $"{BarCode.product.packaging}";
-                TB_Score.Text = $"Nutriscore :{BarCode.product.nutriscore}";
-                TB_country.Text = $"{BarCode.product.labels}";
+                TB_Score.Text = $"Nutriscore :{BarCode.product.nutriscore_2023_tags}";
+                TB_country.Text = $"{BarCode.product.countries}";
 
-                TB_Fat.Text = $"Gras: {BarCode.product.nutrient_levels.fat}g";
-                TB_sat_Fat.Text = $"Gras Saturer {BarCode.product.nutrient_levels.saturatedfat}g";
-                TB_salt.Text = $"Niveau de sel{BarCode.product.nutrient_levels.salt}g";
-                TB_sugre.Text = $"{BarCode.product.nutrient_levels.sugars}";
-                TB_prot.Text = $"{BarCode.product.nutriments.proteins}";
-                TB_kcal.Text = $"{BarCode.product.nutriments.energykcal}";
+                TB_Fat.Text = $"Gras: {BarCode.product.nutriments.fat}g";
+                TB_sat_Fat.Text = $"Gras Saturer: {BarCode.product.nutriments.saturatedfat}g";
+                TB_salt.Text = $"sel: {BarCode.product.nutriments.salt}g";
+                TB_sugre.Text = $"sucre: {BarCode.product.nutriments.sugars}g";
+                TB_prot.Text = $"Proteine: {BarCode.product.nutriments.proteins}g";
+                TB_kcal.Text = $"kcalorie: {BarCode.product.nutriments.energykcal}";
 
                 // = $"{BarCode.Product.ImageUrl}";
 
@@ -68,6 +68,21 @@ namespace glouton
 
                 TB_Name.Text = "couldn't reach API";
 
+            }
+        }
+
+        private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string inputText = SearchTextBox.Text;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string code = SearchTextBox.Text.Trim();
+
+            if(!string.IsNullOrEmpty(code)) 
+            {
+                Search_Prod(code);
             }
         }
     }
