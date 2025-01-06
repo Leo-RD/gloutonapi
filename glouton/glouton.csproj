@@ -72,20 +72,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Adjustments.cs" />
-    <Compile Include="Models\EcoscoreData.cs" />
-    <Compile Include="Models\Images.cs" />
-    <Compile Include="Models\Ingredient.cs" />
-    <Compile Include="Models\LanguagesCodes.cs" />
-    <Compile Include="Models\NutrientLevels.cs" />
-    <Compile Include="Models\Nutriments.cs" />
-    <Compile Include="Models\Packaging.cs" />
-    <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\ProductResponse.cs" />
-    <Compile Include="Models\SelectedImage.cs" />
-    <Compile Include="Models\SelectedImageItem.cs" />
-    <Compile Include="Models\SelectedImages.cs" />
-    <Compile Include="Models\Source.cs" />
+    <Compile Include="Models\FileName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
