@@ -8,6 +8,7 @@ using System.Windows.Media;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using glouton.Models;
+using glouton.CONTROLLER;
 
 namespace glouton
 {
@@ -16,58 +17,37 @@ namespace glouton
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Service _service; // Instance de la classe Service
+
         public MainWindow()
         {
             InitializeComponent();
+            _service = new Service(); // Initialisation de l'instance
             Search_Prod("5000159461122");
-
-        }
-
-        public async Task<Root> FetchProductByCodeAsync(string code)
-        {
-
-            HttpClient client = new HttpClient();
-
-            HttpResponseMessage response = await client.GetAsync($"https://world.openfoodfacts.org/api/v2/product/{code}.json");
-
-            if (response.IsSuccessStatusCode)
-            {
-                var content = await response.Content.ReadAsStringAsync();
-                Root product = JsonConvert.DeserializeObject<Root>(content);
-                return product;
-            }
-
-            return null;
         }
 
         public async void Search_Prod(string code)
         {
-            Root BarCode = await FetchProductByCodeAsync(code);
+            Root BarCode = await _service.FetchProductByCodeAsync(code); // Utilisation de l'instance _service
 
             if (BarCode != null && BarCode.product != null)
             {
                 TB_Name.Text = $"Nom : {BarCode.product.product_name}";
-                TB_weight.Text = $"Poids :{BarCode.product.product_quantity}g";
+                TB_weight.Text = $"Poids : {BarCode.product.product_quantity}g";
                 TB_package.Text = $"{BarCode.product.packaging}";
-                TB_Score.Text = $"Nutriscore :{BarCode.product.nutriscore_2023_tags}";
+                TB_Score.Text = $"Nutriscore : {BarCode.product.nutriscore_2023_tags}";
                 TB_country.Text = $"{BarCode.product.countries}";
 
-                TB_Fat.Text = $"Gras: {BarCode.product.nutriments.fat}g";
-                TB_sat_Fat.Text = $"Gras Saturer: {BarCode.product.nutriments.saturatedfat}g";
-                TB_salt.Text = $"sel: {BarCode.product.nutriments.salt}g";
-                TB_sugre.Text = $"sucre: {BarCode.product.nutriments.sugars}g";
-                TB_prot.Text = $"Proteine: {BarCode.product.nutriments.proteins}g";
-                TB_kcal.Text = $"kcalorie: {BarCode.product.nutriments.energykcal}";
-
-                // = $"{BarCode.Product.ImageUrl}";
-
+                TB_Fat.Text = $"Gras : {BarCode.product.nutriments.fat}g";
+                TB_sat_Fat.Text = $"Gras Saturé : {BarCode.product.nutriments.saturatedfat}g";
+                TB_salt.Text = $"Sel : {BarCode.product.nutriments.salt}g";
+                TB_sugre.Text = $"Sucre : {BarCode.product.nutriments.sugars}g";
+                TB_prot.Text = $"Protéine : {BarCode.product.nutriments.proteins}g";
+                TB_kcal.Text = $"Kcalorie : {BarCode.product.nutriments.energykcal}";
             }
             else
-
             {
-
-                TB_Name.Text = "couldn't reach API";
-
+                TB_Name.Text = "Impossible d'atteindre l'API";
             }
         }
 
@@ -80,7 +60,7 @@ namespace glouton
         {
             string code = SearchTextBox.Text.Trim();
 
-            if(!string.IsNullOrEmpty(code)) 
+            if (!string.IsNullOrEmpty(code))
             {
                 Search_Prod(code);
             }
