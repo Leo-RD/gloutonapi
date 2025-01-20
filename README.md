@@ -103,7 +103,8 @@ Ce projet est distribué sous la licence MIT. Consultez le fichier `LICENSE` pou
 
 ## Auteurs
 
-- **Leo-RD** ([Votre GitHub](https://github.com/votre-utilisateur))
+- **Leo-RD** ([GitHub](https://github.com/Leo-RD))
+- **Ali-Kasal** ([GitHub](https://github.com/Ali-Kasal))
 
 ---
 
