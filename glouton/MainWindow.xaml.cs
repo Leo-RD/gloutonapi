@@ -41,7 +41,7 @@ namespace glouton
                 TB_Fat.Text = $"Gras : {BarCode.product.nutriments.fat}g";
                 TB_sat_Fat.Text = $"Gras Saturé : {BarCode.product.nutriments.saturatedfat}g";
                 TB_salt.Text = $"Sel : {BarCode.product.nutriments.salt}g";
-                TB_sugre.Text = $"Sucre : {BarCode.product.nutriments.sugars}g";
+                TB_sucre.Text = $"Sucre : {BarCode.product.nutriments.sugars}g";
                 TB_prot.Text = $"Protéine : {BarCode.product.nutriments.proteins}g";
                 TB_kcal.Text = $"Kcalorie : {BarCode.product.nutriments.energykcal}";
             }
