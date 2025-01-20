@@ -19,7 +19,7 @@ namespace glouton
         public MainWindow()
         {
             InitializeComponent();
-            Search_Prod("5000159461122");
+            Search_Prod("3017620425035");
 
         }
 
@@ -46,11 +46,11 @@ namespace glouton
 
             if (BarCode != null && BarCode.product != null)
             {
-                TB_Name.Text = $"Nom : {BarCode.product.product_name}";
-                TB_weight.Text = $"Poids :{BarCode.product.product_quantity}g";
-                TB_package.Text = $"{BarCode.product.packaging}";
-                TB_Score.Text = $"Nutriscore :{BarCode.product.nutriscore_2023_tags}";
-                TB_country.Text = $"{BarCode.product.countries}";
+                TB_Name.Text = $"Nom: {BarCode.product.product_name}";
+                TB_weight.Text = $"Poids: {BarCode.product.product_quantity}g";
+                TB_package.Text = $"{BarCode.product.packaging_text_en}";
+                TB_Score.Text = $"Nutriscore: {BarCode.product.nutriscore_data.grade}";
+                TB_country.Text = $"Pays avec la plus grande consomation : {BarCode.product.countries_hierarchy[0].Remove(0,3)}";
 
                 TB_Fat.Text = $"Gras: {BarCode.product.nutriments.fat}g";
                 TB_sat_Fat.Text = $"Gras Saturer: {BarCode.product.nutriments.saturatedfat}g";
@@ -59,7 +59,6 @@ namespace glouton
                 TB_prot.Text = $"Proteine: {BarCode.product.nutriments.proteins}g";
                 TB_kcal.Text = $"kcalorie: {BarCode.product.nutriments.energykcal}";
 
-                // = $"{BarCode.Product.ImageUrl}";
 
             }
             else
