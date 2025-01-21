@@ -12,9 +12,6 @@ using glouton.CONTROLLER;
 
 namespace glouton
 {
-    /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private Service _service; // Instance de la classe Service
@@ -34,27 +31,16 @@ namespace glouton
             if (BarCode != null && BarCode.product != null)
             {
                 TB_Name.Text = $"Nom: {BarCode.product.product_name}";
-
                 TB_weight.Text = $"Poids: {BarCode.product.product_quantity}g";
-
                 TB_package.Text = $"{BarCode.product.packaging_text_en}";
-
                 TB_Score.Text = $"Nutriscore: {BarCode.product.nutriscore_data.grade}";
-
                 TB_country.Text = $"Pays avec la plus grande consomation : {BarCode.product.countries_hierarchy[0].Remove(0, 3)}";
-
                 TB_Fat.Text = $"Gras: {BarCode.product.nutriments.fat}g";
-
                 TB_sat_Fat.Text = $"Gras Saturés: {BarCode.product.nutriments.saturatedfat}g";
-
                 TB_salt.Text = $"Sel: {BarCode.product.nutriments.salt}g";
-
                 TB_sucre.Text = $"Sucre: {BarCode.product.nutriments.sugars}g";
-
                 TB_prot.Text = $"Protéines: {BarCode.product.nutriments.proteins}g";
-
                 TB_kcal.Text = $"KiloCalories: {BarCode.product.nutriments.energykcal}";
-
             }
             else
             {
@@ -66,6 +52,32 @@ namespace glouton
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             string inputText = SearchTextBox.Text;
+        }
+
+        // Gestionnaire d'événements pour bloquer les entrées non numériques
+        private void SearchTextBox_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            if (!IsTextNumeric(e.Text))
+            {
+                e.Handled = true; // Bloque l'entrée
+                MessageBox.Show("Seuls les chiffres sont autorisés.", "Entrée invalide", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        // Gestionnaire pour bloquer le collage de texte non autorisé
+        private void SearchTextBox_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.V && (System.Windows.Input.Keyboard.Modifiers & System.Windows.Input.ModifierKeys.Control) == System.Windows.Input.ModifierKeys.Control)
+            {
+                MessageBox.Show("Coller est désactivé pour cet élément.", "Action non autorisée", MessageBoxButton.OK, MessageBoxImage.Warning);
+                e.Handled = true;
+            }
+        }
+
+        // Méthode pour vérifier si une chaîne est numérique
+        private bool IsTextNumeric(string text)
+        {
+            return int.TryParse(text, out _);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
