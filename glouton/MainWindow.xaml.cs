@@ -8,6 +8,7 @@ using System.Windows.Media;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using glouton.Models;
+using glouton.CONTROLLER;
 
 namespace glouton
 {
@@ -16,36 +17,23 @@ namespace glouton
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Service _service; // Instance de la classe Service
+
         public MainWindow()
         {
             InitializeComponent();
-            Search_Prod("3017620425035");
+            _service = new Service(); // Initialisation de l'instance
+            Search_Prod("5000159461122");
 
-        }
-
-        public async Task<Root> FetchProductByCodeAsync(string code)
-        {
-
-            HttpClient client = new HttpClient();
-
-            HttpResponseMessage response = await client.GetAsync($"https://world.openfoodfacts.org/api/v2/product/{code}.json");
-
-            if (response.IsSuccessStatusCode)
-            {
-                var content = await response.Content.ReadAsStringAsync();
-                Root product = JsonConvert.DeserializeObject<Root>(content);
-                return product;
-            }
-
-            return null;
         }
 
         public async void Search_Prod(string code)
         {
-            Root BarCode = await FetchProductByCodeAsync(code);
+            Root BarCode = await _service.FetchProductByCodeAsync(code); // Utilisation de l'instance _service
 
             if (BarCode != null && BarCode.product != null)
             {
+
                 TB_Name.Text = $"Nom: {BarCode.product.product_name}";
                 TB_weight.Text = $"Poids: {BarCode.product.product_quantity}g";
                 TB_package.Text = $"{BarCode.product.packaging_text_en}";
@@ -62,11 +50,8 @@ namespace glouton
 
             }
             else
-
             {
-
-                TB_Name.Text = "couldn't reach API";
-
+                TB_Name.Text = "Impossible d'atteindre l'API";
             }
         }
 
@@ -79,7 +64,7 @@ namespace glouton
         {
             string code = SearchTextBox.Text.Trim();
 
-            if(!string.IsNullOrEmpty(code)) 
+            if (!string.IsNullOrEmpty(code))
             {
                 Search_Prod(code);
             }
