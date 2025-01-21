@@ -11,9 +11,10 @@ namespace glouton.CONTROLLER
 {
     public class Service
     {
-        public async Task<Root> FetchProductByCodeAsync(string code)
+        // Méthode pour récupérer les produits par catégorie
+        public async Task<Root> FetchProductByCodeAsync(string code) // code = code barre du produit
         {
-
+            // communication avec l'API OpenFoodFacts
             HttpClient client = new HttpClient();
 
             HttpResponseMessage response = await client.GetAsync($"https://world.openfoodfacts.org/api/v2/product/{code}.json");

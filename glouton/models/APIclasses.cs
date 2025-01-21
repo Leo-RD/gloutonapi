@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace glouton.Models
 {
   
-        // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+        // Classes métiers pour la désérialisation du JSON
         public class _1
         {
             public Sizes sizes { get; set; }

@@ -26,6 +26,7 @@ namespace glouton
             Search_Prod("5000159461122");
         }
 
+        // Méthode pour rechercher un produit par code barre
         public async void Search_Prod(string code)
         {
             Root BarCode = await _service.FetchProductByCodeAsync(code); // Utilisation de l'instance _service
@@ -51,6 +52,7 @@ namespace glouton
             }
         }
 
+        // Méthode pour utiliser la barre de recherche
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             string inputText = SearchTextBox.Text;
