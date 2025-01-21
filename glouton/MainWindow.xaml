@@ -23,6 +23,7 @@
         <!-- Barre de recherche -->
         <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Margin="0,60,0,20">
             <Border CornerRadius="10" Background="White" HorizontalAlignment="Left" Width="400" Padding="5" Margin="10,-30,0,30">
+
                 <DockPanel>
                     <TextBox Name="SearchTextBox" Width="250" Height="30" Margin="10" TextChanged="SearchTextBox_TextChanged"/>
                     <Button Content="🔍" Width="80" Height="30" Margin="-15" Background="White" Click="Button_Click"/>
@@ -43,24 +44,26 @@
             <Border Grid.Column="0" Background="#587B7F" Padding="10" Margin="10" CornerRadius="15">
                 <StackPanel>
                     <TextBlock Name="TB_info" Text="Informations :" Style="{StaticResource LuckiestGuyFontStyle}" FontSize="18" Foreground="Yellow" Margin="0,0,0,20" />
-                    <TextBlock Name="TB_Name" Text="Nom" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
-                    <TextBlock Name="TB_weight" Text="Poids/Quantité" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
-                    <TextBlock Name="TB_package" Text="Conditionnement" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" TextWrapping="Wrap" />
-                    <TextBlock Name="TB_Score" Text="Nutri-Score" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
-                    <TextBlock Name="TB_country" Text="Pays de vente" FontSize="16" FontFamily="Verdana"  Margin="0,10,0,10" />
+
+                    <TextBlock Name="TB_Name" Text="Nom" FontSize="16" FontFamily="Ink Free" Margin="0,10,0,10" />
+                    <TextBlock Name="TB_weight" Text="Poids/Quantité" FontSize="16" FontFamily="Ink Free" Margin="0,10,0,10" />
+                    <TextBlock Name="TB_package" Text="Conditionnement" FontSize="16" FontFamily="Ink Free" Margin="0,10,0,10" TextWrapping="Wrap" />
+                    <TextBlock Name="TB_Score" Text="Nutri-Score" FontSize="16" FontFamily="Ink Free" Margin="0,10,0,10" />
+                    <TextBlock Name="TB_country" Text="Pays de vente" FontSize="16" FontFamily="Ink Free"  Margin="0,10,0,10" TextWrapping="Wrap" />
                 </StackPanel>
             </Border>
 
             <!-- Apports Nutritionnels -->
             <Border Grid.Column="1" Background="#218380" Padding="10" Margin="10,10,10,10" CornerRadius="15">
                 <StackPanel>
-                    <TextBlock Text="Apports Nutritionnels :" Style="{StaticResource LuckiestGuyFontStyle}" Foreground="Yellow" FontSize="18" Margin="0,0,0,20" />
-                    <TextBlock Name="TB_Fat" Text="Gras" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
-                    <TextBlock Name="TB_sat_Fat" Text="Gras Saturés" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
-                    <TextBlock Name="TB_salt" Text="Sel" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
-                    <TextBlock Name="TB_sucre" Text="Sucre" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
-                    <TextBlock Name="TB_prot" Text="Protéines" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
-                    <TextBlock Name="TB_kcal" Text="Kcal" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
+
+                    <TextBlock Style="{StaticResource LuckiestGuyFontStyle}" Foreground="Yellow" FontSize="18" Margin="0,0,0,20" ><Run Text="Apports Nutritionnels"/><LineBreak/><Run Language="en-gb" Text="       "/><Run Text=" "/><Run Text=" "/><Run Language="en-gb" Text="      "/><Run Text="pour 100g "/><Run Text=":"/></TextBlock>
+                    <TextBlock Name="TB_Fat" Text="Gras" FontSize="16" FontFamily="Ink Free" Margin="0,10,0,10" />
+                    <TextBlock Name="TB_sat_Fat" Text="Gras Saturés" FontSize="16" FontFamily="Ink Free" Margin="0,10,0,10" />
+                    <TextBlock Name="TB_salt" Text="Sel" FontSize="16" FontFamily="Ink Free" Margin="0,10,0,10" />
+                    <TextBlock Name="TB_sugre" Text="Sucre" FontSize="16" FontFamily="Ink Free" Margin="0,10,0,10" />
+                    <TextBlock Name="TB_prot" Text="Protéines" FontSize="16" FontFamily="Ink Free" Margin="0,10,0,10" />
+                    <TextBlock Name="TB_kcal" Text="Kcal" FontSize="16" FontFamily="Ink Free" Margin="0,10,0,10" />
                 </StackPanel>
             </Border>
 
