@@ -37,7 +37,6 @@
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
 
             <!-- Informations -->
@@ -72,18 +71,6 @@
                 <StackPanel>
                     <TextBlock Text="Image et Description :" Style="{StaticResource LuckiestGuyFontStyle}" Foreground="Yellow" FontSize="18" Margin="0,0,0,20" />
                     <Image x:Name="IMG_Le_Goulton" Source="pack://application:,,,/RESOURCES/gupitaro.jpg" Stretch="Uniform" Height="100" />
-                </StackPanel>
-            </Border>
-
-            <!-- Nouvelle Colonne -->
-            <Border Grid.Column="3" Background="#218380" Padding="10" Margin="10,10,10,10" CornerRadius="15">
-                <StackPanel>
-                    <TextBlock Name="TB_Lable" Text="Ingrédients :" Style="{StaticResource LuckiestGuyFontStyle}" FontSize="18" Foreground="yellow"  Margin="0,0,0,20" />
-                    <TextBlock Text="Ingrédient 1" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
-                    <TextBlock Text="Ingrédient 2" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
-                    <TextBlock Text="Ingrédient 3" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
-                    <TextBlock Text="Ingrédient 4" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
-                    <TextBlock Text="..." FontSize="16" Margin="0,10,0,10" />
                 </StackPanel>
             </Border>
         </Grid>
