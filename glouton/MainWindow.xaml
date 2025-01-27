@@ -27,15 +27,15 @@
     <Grid x:Name="MainGrid" Margin="20">
         <!-- Titre principal -->
         <TextBlock Text="Le Guide du Glouton"
-                   FontSize="28" FontWeight="Bold" Foreground="#0078D4"
+                   FontSize="28" FontWeight="Bold" Foreground="#a262d6"
                    HorizontalAlignment="Center" VerticalAlignment="Top"
                    Margin="0,10,0,20" />
 
         <!-- Barre de recherche -->
         <DockPanel VerticalAlignment="Top" Margin="0,60,0,0" HorizontalAlignment="Center">
             <Grid>
-                <TextBox Name="SearchTextBox" Width="300" Height="30" VerticalAlignment="Center"
-                         Margin="0,0,10,0" Padding="5" BorderBrush="#CCCCCC" 
+                <TextBox Name="SearchTextBox" Width="300" Height="30" VerticalAlignment="Center" 
+                         Margin="0,0,10,0" Padding="5" BorderBrush="#CCCCCC" Foreground="Black"
                          PreviewTextInput="SearchTextBox_PreviewTextInput"/>
                 <!-- Placeholder -->
                 <TextBlock Text="Rechercher un produit..." Foreground="#AAAAAA" 
@@ -59,7 +59,7 @@
                     </TextBlock.Style>
                 </TextBlock>
             </Grid>
-            <Button Content="🔍" Width="50" Height="30" Background="#0078D4" Foreground="White"
+            <Button Content="🔍" Width="50" Height="30" Background="#a262d6" Foreground="White"
                     BorderThickness="0" Cursor="Hand" Click="Button_Click" />
         </DockPanel>
 
