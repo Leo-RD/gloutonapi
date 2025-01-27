@@ -103,7 +103,7 @@
                     BorderBrush="#E5E5E5" BorderThickness="1">
                 <StackPanel HorizontalAlignment="Center">
                     <TextBlock Text="Image et Description :" Style="{StaticResource TitleTextStyle}" Margin="0,0,0,10" />
-                    <Image Source="pack://application:,,,/RESOURCES/gupitaro.jpg" Width="150" Height="150" Stretch="Uniform" />
+                    <Image Name="IMG_gupitaro" Source="pack://application:,,,/RESOURCES/gupitaro.jpg" Width="150" Height="150" Stretch="Uniform" />
                 </StackPanel>
             </Border>
         </Grid>

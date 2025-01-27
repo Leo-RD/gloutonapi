@@ -4,11 +4,12 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using glouton.Models;
 using glouton.CONTROLLER;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace glouton
 {
@@ -52,7 +53,32 @@ namespace glouton
 
                 TB_kcal.Text = $"KiloCalories: {BarCode.product.nutriments.energykcal}";
 
-                BarCode.product.image_front_url = BarCode.product.image_front_url.Replace("400", "full");
+                string imageUrl = $"{BarCode.product.image_front_url}"; // URL de l'image depuis l'API
+
+
+                try
+                {
+                    using (HttpClient client = new HttpClient())
+                    {
+                        // Récupérer l'image en tant que flux binaire
+                        byte[] imageBytes = await client.GetByteArrayAsync(imageUrl);
+
+                        // Convertir les données en ImageSource
+                        var imageStream = new System.IO.MemoryStream(imageBytes);
+                        var bitmap = new BitmapImage();
+                        bitmap.BeginInit();
+                        bitmap.StreamSource = imageStream;
+                        bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                        bitmap.EndInit();
+
+                        // Assigner l'image au contrôle Image
+                        IMG_gupitaro.Source = bitmap;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erreur lors du chargement de l'image: " + ex.Message);
+                }
             }
             else
             {
