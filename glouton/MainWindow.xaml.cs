@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using glouton.Models;
@@ -51,10 +51,42 @@ namespace glouton
                 TB_prot.Text = $"Protéines: {BarCode.product.nutriments.proteins}g";
 
                 TB_kcal.Text = $"KiloCalories: {BarCode.product.nutriments.energykcal}";
+
+                string imageUrl = $"{BarCode.product.image_front_url}"; // Remplacez par votre URL
+
+                try
+                {
+                    // Utilisation de HttpClient pour récupérer l'image
+                    using (HttpClient client = new HttpClient())
+                    {
+                        var imageBytes = await client.GetByteArrayAsync(imageUrl);
+
+                        // Convertir les données en BitmapImage
+                        BitmapImage bitmapImage = new BitmapImage();
+                        using (var stream = new System.IO.MemoryStream(imageBytes))
+                        {
+                            bitmapImage.BeginInit();
+                            bitmapImage.StreamSource = stream;
+                            bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+                            bitmapImage.EndInit();
+                        }
+
+                        // Afficher l'image dans l'interface
+                        IMG_Le_Goulton.Source = bitmapImage;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erreur lors du chargement de l'image : {ex.Message}");
+                }
+
+
             }
             else
             {
                 TB_Name.Text = "Impossible d'atteindre l'API";
+                MessageBox.Show("Entrée un code Bar valide.", "Entrée invalide", MessageBoxButton.OK, MessageBoxImage.Warning);
+
             }
         }
 
@@ -75,14 +107,7 @@ namespace glouton
         }
 
         // Gestionnaire pour bloquer le collage de texte non autorisé
-        private void SearchTextBox_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
-        {
-            if (e.Key == System.Windows.Input.Key.V && (System.Windows.Input.Keyboard.Modifiers & System.Windows.Input.ModifierKeys.Control) == System.Windows.Input.ModifierKeys.Control)
-            {
-                MessageBox.Show("Coller est désactivé pour cet élément.", "Action non autorisée", MessageBoxButton.OK, MessageBoxImage.Warning);
-                e.Handled = true;
-            }
-        }
+
 
         // Méthode pour vérifier si une chaîne est numérique
         private bool IsTextNumeric(string text)
@@ -99,5 +124,8 @@ namespace glouton
                 Search_Prod(code);
             }
         }
+
+
     }
 }
+

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:glouton"
         mc:Ignorable="d"
-        Title="L'API du Glouton" Height="600" Width="1000" Background="#8A1F1F">
+        Title="L'API du Glouton" Height="600" Width="1000" Background="#2F313C">
     <Window.Resources>
         <!-- Police personnalisée -->
         <Style x:Key="LuckiestGuyFontStyle" TargetType="TextBlock">
@@ -15,22 +15,21 @@
 
     <Grid x:Name="MainGrid" Margin="10">
         <!-- Titre -->
-        <TextBlock Text="Le guide du Glouton"
+        <TextBlock
                    Style="{StaticResource LuckiestGuyFontStyle}"
-                   FontSize="36" Foreground="Yellow" HorizontalAlignment="Right" VerticalAlignment="Top"
-                   Margin="0,25,177,0" />
+                   FontSize="32" Foreground="#DECBB7" FontWeight="Bold" FontFamily="segoe ui" HorizontalAlignment="Left" VerticalAlignment="Top"
+                   Margin="337,10,0,0" ><Run Text="Le "/><Run Text="G"/><Run Text="uide "/><Run Language="en-gb" Text="D"/><Run Text="u Glouton"/></TextBlock>
 
         <!-- Barre de recherche -->
-        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Margin="0,60,0,20">
-            <Border CornerRadius="10" Background="White" HorizontalAlignment="Left" Width="400" Padding="5" Margin="10,-30,0,30">
-                <DockPanel>
-                    <TextBox Name="SearchTextBox" Width="250" Height="30" Margin="10" 
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Height="60" Margin="0,95,0,0" RenderTransformOrigin="0.513,0.479">
+
+            <DockPanel Margin="0,-30,0,30">
+                <TextBox Name="SearchTextBox" Width="250" Height="30" Margin="10" 
+                             Background="#F1E7E6"
                              TextChanged="SearchTextBox_TextChanged" 
-                             PreviewTextInput="SearchTextBox_PreviewTextInput"
-                             PreviewKeyDown="SearchTextBox_PreviewKeyDown" />
-                    <Button Content="🔍" Width="80" Height="30" Margin="-15" Background="White" Click="Button_Click" />
-                </DockPanel>
-            </Border>
+                             PreviewTextInput="SearchTextBox_PreviewTextInput" />
+                <Button Content="🔍" Width="80" Height="30" Margin="-15" Background="#00A6A6" Click="Button_Click" />
+            </DockPanel>
         </Grid>
 
         <!-- Conteneur Principal -->
@@ -42,9 +41,9 @@
             </Grid.ColumnDefinitions>
 
             <!-- Informations -->
-            <Border Grid.Column="0" Background="#587B7F" Padding="10" Margin="10" CornerRadius="15">
+            <Border Grid.Column="0" Background="#DECBB7" Padding="10" Margin="10" CornerRadius="10">
                 <StackPanel>
-                    <TextBlock Name="TB_info" Text="Informations :" Style="{StaticResource LuckiestGuyFontStyle}" FontSize="18" Foreground="Yellow" Margin="0,0,0,20" />
+                    <TextBlock Name="TB_info" FontWeight="Bold" Text="Informations :" FontFamily="segoe ui" FontSize="18" Foreground="Black" Margin="0,0,0,20" />
                     <TextBlock Name="TB_Name" Text="Nom" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
                     <TextBlock Name="TB_weight" Text="Poids/Quantité" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
                     <TextBlock Name="TB_package" Text="Conditionnement" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" TextWrapping="Wrap" />
@@ -54,9 +53,9 @@
             </Border>
 
             <!-- Apports Nutritionnels -->
-            <Border Grid.Column="1" Background="#218380" Padding="10" Margin="10,10,10,10" CornerRadius="15">
+            <Border Grid.Column="1" Background="#DECBB7" Padding="10" Margin="10,10,10,10" CornerRadius="10">
                 <StackPanel>
-                    <TextBlock Text="Apports Nutritionnels :" Style="{StaticResource LuckiestGuyFontStyle}" Foreground="Yellow" FontSize="18" Margin="0,0,0,20" />
+                    <TextBlock Text="Apports Nutritionnels :" FontWeight="Bold" FontFamily="segoe ui" Foreground="Black" FontSize="18" Margin="0,0,0,20" />
                     <TextBlock Name="TB_Fat" Text="Gras" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
                     <TextBlock Name="TB_sat_Fat" Text="Gras Saturés" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
                     <TextBlock Name="TB_salt" Text="Sel" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
@@ -67,18 +66,18 @@
             </Border>
 
             <!-- Image -->
-            <Border Grid.Column="2" Background="#587B7F" Padding="10" Margin="10,10,10,10" CornerRadius="15">
+            <Border Grid.Column="2" Background="#DECBB7" Padding="10" Margin="10,10,10,10" CornerRadius="10">
                 <StackPanel>
-                    <TextBlock Text="Image et Description :" Style="{StaticResource LuckiestGuyFontStyle}" Foreground="Yellow" FontSize="18" Margin="0,0,0,20" />
-                    <Image x:Name="IMG_Le_Goulton" Source="pack://application:,,,/RESOURCES/gupitaro.jpg" Stretch="Uniform" Height="100" />
+                    <TextBlock FontStyle="Normal" FontWeight="Bold" FontFamily="segoe ui" Foreground="Black" FontSize="18" Margin="0,0,0,20" ><Run Text="Image"/><Run Language="en-gb" Text=" "/><Run Text=":"/></TextBlock>
+                    <Image x:Name="IMG_Le_Goulton" Source="pack://application:,,,/RESOURCES/gupitaro.jpg" Stretch="Uniform" Height="312" />
                 </StackPanel>
             </Border>
         </Grid>
 
         <!-- Footer -->
         <TextBlock Text="© 2024 Kasai Ali et Roux-Decorzent Léopold | Using OpenFoodFacts API"
-                   Foreground="Yellow" HorizontalAlignment="Center" VerticalAlignment="Bottom"
-                   Style="{StaticResource LuckiestGuyFontStyle}"
+                   Foreground="#DECBB7" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                   FontFamily="segoe ui"
                    Margin="0,0,0,10" />
     </Grid>
 </Window>
