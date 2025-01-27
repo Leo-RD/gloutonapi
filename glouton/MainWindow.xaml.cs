@@ -51,10 +51,32 @@ namespace glouton
                 TB_prot.Text = $"Protéines: {BarCode.product.nutriments.proteins}g";
 
                 TB_kcal.Text = $"KiloCalories: {BarCode.product.nutriments.energykcal}";
+
+                BarCode.product.image_front_url = BarCode.product.image_front_url.Replace("400", "full");
             }
             else
             {
                 TB_Name.Text = "Impossible d'atteindre l'API";
+
+                TB_weight.Text = "Impossible d'atteindre l'API";
+
+                TB_package.Text = "Impossible d'atteindre l'API";
+
+                TB_Score.Text = "Impossible d'atteindre l'API";
+
+                TB_country.Text = "Impossible d'atteindre l'API";
+
+                TB_Fat.Text = "Impossible d'atteindre l'API";
+
+                TB_sat_Fat.Text = "Impossible d'atteindre l'API";
+
+                TB_salt.Text = "Impossible d'atteindre l'API";
+
+                TB_sucre.Text = "Impossible d'atteindre l'API";
+
+                TB_prot.Text = "Impossible d'atteindre l'API";
+
+                TB_kcal.Text = "Impossible d'atteindre l'API";
             }
         }
 
