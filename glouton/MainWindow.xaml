@@ -4,36 +4,67 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:glouton"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="L'API du Glouton" Height="600" Width="1000" Background="#8A1F1F">
+        Title="L'API du Glouton" Height="600" Width="1000" Background="#1f3c58">
     <Window.Resources>
-        <!-- Police personnalisée -->
-        <Style x:Key="LuckiestGuyFontStyle" TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="pack://application:,,,/Fonts/#Luckiest Guy" />
+        <!-- Style pour les titres -->
+        <Style x:Key="TitleTextStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Foreground" Value="#333333" />
+        </Style>
+
+        <!-- Style pour le contenu -->
+        <Style x:Key="ContentTextStyle" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Foreground" Value="#555555" />
         </Style>
     </Window.Resources>
 
-    <Grid x:Name="MainGrid" Margin="10">
-        <!-- Titre -->
-        <TextBlock Text="Le guide du Glouton"
-                   Style="{StaticResource LuckiestGuyFontStyle}"
-                   FontSize="36" Foreground="Yellow" HorizontalAlignment="Right" VerticalAlignment="Top"
-                   Margin="0,25,177,0" />
+    <Grid x:Name="MainGrid" Margin="20">
+        <!-- Titre principal -->
+        <TextBlock Text="Le Guide du Glouton"
+                   FontSize="28" FontWeight="Bold" Foreground="#0078D4"
+                   HorizontalAlignment="Center" VerticalAlignment="Top"
+                   Margin="0,10,0,20" />
 
         <!-- Barre de recherche -->
-        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Height="60" Margin="0,60,0,20">
-            <Border CornerRadius="10" Background="White" HorizontalAlignment="Left" Width="400" Padding="5" Margin="10,-30,0,30">
-                <DockPanel>
-                    <TextBox Name="SearchTextBox" Width="250" Height="30" Margin="10" 
-                             TextChanged="SearchTextBox_TextChanged" 
-                             PreviewTextInput="SearchTextBox_PreviewTextInput"/>
-                    <Button Content="🔍" Width="80" Height="30" Margin="-15" Background="White" Click="Button_Click" />
-                </DockPanel>
-            </Border>
-        </Grid>
+        <DockPanel VerticalAlignment="Top" Margin="0,60,0,0" HorizontalAlignment="Center">
+            <Grid>
+                <TextBox Name="SearchTextBox" Width="300" Height="30" VerticalAlignment="Center"
+                         Margin="0,0,10,0" Padding="5" BorderBrush="#CCCCCC" 
+                         PreviewTextInput="SearchTextBox_PreviewTextInput"/>
+                <!-- Placeholder -->
+                <TextBlock Text="Rechercher un produit..." Foreground="#AAAAAA" 
+                           VerticalAlignment="Center" HorizontalAlignment="Left" 
+                           Margin="10,0,0,0" IsHitTestVisible="False">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Visibility" Value="Visible" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Text, ElementName=SearchTextBox}" Value="">
+                                    <Setter Property="Visibility" Value="Visible" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Text, ElementName=SearchTextBox}" Value="{x:Null}">
+                                    <Setter Property="Visibility" Value="Visible" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Text, ElementName=SearchTextBox}" Value="{x:Static sys:String.Empty}">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </Grid>
+            <Button Content="🔍" Width="50" Height="30" Background="#0078D4" Foreground="White"
+                    BorderThickness="0" Cursor="Hand" Click="Button_Click" />
+        </DockPanel>
 
-        <!-- Conteneur Principal -->
-        <Grid Margin="0,130,0,40">
+        <!-- Conteneur principal -->
+        <Grid Margin="0,120,0,50">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
@@ -41,43 +72,45 @@
             </Grid.ColumnDefinitions>
 
             <!-- Informations -->
-            <Border Grid.Column="0" Background="#587B7F" Padding="10" Margin="10" CornerRadius="15">
+            <Border Grid.Column="0" Background="#d3cebe" CornerRadius="8" Padding="15" Margin="10"
+                    BorderBrush="#E5E5E5" BorderThickness="1">
                 <StackPanel>
-                    <TextBlock Name="TB_info" Text="Informations :" Style="{StaticResource LuckiestGuyFontStyle}" FontSize="18" Foreground="Yellow" Margin="0,0,0,20" />
-                    <TextBlock Name="TB_Name" Text="Nom" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
-                    <TextBlock Name="TB_weight" Text="Poids/Quantité" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
-                    <TextBlock Name="TB_package" Text="Conditionnement" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" TextWrapping="Wrap" />
-                    <TextBlock Name="TB_Score" Text="Nutri-Score" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
-                    <TextBlock Name="TB_country" Text="Pays de vente" FontSize="16" FontFamily="Verdana"  Margin="0,10,0,10" />
+                    <TextBlock Text="Informations :" Style="{StaticResource TitleTextStyle}" Margin="0,0,0,10" />
+                    <TextBlock Name="TB_Name" Text="Nom :" Style="{StaticResource ContentTextStyle}" />
+                    <TextBlock Name="TB_weight" Text="Poids/Quantité :" Style="{StaticResource ContentTextStyle}" />
+                    <TextBlock Name="TB_package" Text="Conditionnement :" Style="{StaticResource ContentTextStyle}" TextWrapping="Wrap" />
+                    <TextBlock Name="TB_Score" Text="Nutri-Score :" Style="{StaticResource ContentTextStyle}" />
+                    <TextBlock Name="TB_country" Text="Pays de vente :" Style="{StaticResource ContentTextStyle}" />
                 </StackPanel>
             </Border>
 
             <!-- Apports Nutritionnels -->
-            <Border Grid.Column="1" Background="#218380" Padding="10" Margin="10,10,10,10" CornerRadius="15">
+            <Border Grid.Column="1" Background="#d3cebe" CornerRadius="8" Padding="15" Margin="10"
+                    BorderBrush="#E5E5E5" BorderThickness="1">
                 <StackPanel>
-                    <TextBlock Text="Apports Nutritionnels :" Style="{StaticResource LuckiestGuyFontStyle}" Foreground="Yellow" FontSize="18" Margin="0,0,0,20" />
-                    <TextBlock Name="TB_Fat" Text="Gras" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
-                    <TextBlock Name="TB_sat_Fat" Text="Gras Saturés" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
-                    <TextBlock Name="TB_salt" Text="Sel" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
-                    <TextBlock Name="TB_sucre" Text="Sucre" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
-                    <TextBlock Name="TB_prot" Text="Protéines" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
-                    <TextBlock Name="TB_kcal" Text="Kcal" FontSize="16" FontFamily="Verdana" Margin="0,10,0,10" />
+                    <TextBlock Text="Apports Nutritionnels :" Style="{StaticResource TitleTextStyle}" Margin="0,0,0,10" />
+                    <TextBlock Name="TB_Fat" Text="Gras :" Style="{StaticResource ContentTextStyle}" />
+                    <TextBlock Name="TB_sat_Fat" Text="Gras Saturés :" Style="{StaticResource ContentTextStyle}" />
+                    <TextBlock Name="TB_salt" Text="Sel :" Style="{StaticResource ContentTextStyle}" />
+                    <TextBlock Name="TB_sucre" Text="Sucre :" Style="{StaticResource ContentTextStyle}" />
+                    <TextBlock Name="TB_prot" Text="Protéines :" Style="{StaticResource ContentTextStyle}" />
+                    <TextBlock Name="TB_kcal" Text="Kcal :" Style="{StaticResource ContentTextStyle}" />
                 </StackPanel>
             </Border>
 
-            <!-- Image -->
-            <Border Grid.Column="2" Background="#587B7F" Padding="10" Margin="10,10,10,10" CornerRadius="15">
-                <StackPanel>
-                    <TextBlock Text="Image et Description :" Style="{StaticResource LuckiestGuyFontStyle}" Foreground="Yellow" FontSize="18" Margin="0,0,0,20" />
-                    <Image x:Name="IMG_Le_Goulton" Source="pack://application:,,,/RESOURCES/gupitaro.jpg" Stretch="Uniform" Height="100" />
+            <!-- Image et Description -->
+            <Border Grid.Column="2" Background="#d3cebe" CornerRadius="8" Padding="15" Margin="10"
+                    BorderBrush="#E5E5E5" BorderThickness="1">
+                <StackPanel HorizontalAlignment="Center">
+                    <TextBlock Text="Image et Description :" Style="{StaticResource TitleTextStyle}" Margin="0,0,0,10" />
+                    <Image Source="pack://application:,,,/RESOURCES/gupitaro.jpg" Width="150" Height="150" Stretch="Uniform" />
                 </StackPanel>
             </Border>
         </Grid>
 
         <!-- Footer -->
         <TextBlock Text="© 2024 Kasai Ali et Roux-Decorzent Léopold | Using OpenFoodFacts API"
-                   Foreground="Yellow" HorizontalAlignment="Center" VerticalAlignment="Bottom"
-                   Style="{StaticResource LuckiestGuyFontStyle}"
-                   Margin="0,0,0,10" />
+                   FontSize="12" Foreground="#888888" HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                   Margin="0,10,0,0" />
     </Grid>
 </Window>
