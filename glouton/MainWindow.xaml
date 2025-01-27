@@ -26,8 +26,7 @@
                 <DockPanel>
                     <TextBox Name="SearchTextBox" Width="250" Height="30" Margin="10" 
                              TextChanged="SearchTextBox_TextChanged" 
-                             PreviewTextInput="SearchTextBox_PreviewTextInput"
-                             PreviewKeyDown="SearchTextBox_PreviewKeyDown" />
+                             PreviewTextInput="SearchTextBox_PreviewTextInput"/>
                     <Button Content="🔍" Width="80" Height="30" Margin="-15" Background="White" Click="Button_Click" />
                 </DockPanel>
             </Border>

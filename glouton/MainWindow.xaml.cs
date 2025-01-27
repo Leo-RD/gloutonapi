@@ -74,15 +74,7 @@ namespace glouton
             }
         }
 
-        // Gestionnaire pour bloquer le collage de texte non autorisé
-        private void SearchTextBox_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
-        {
-            if (e.Key == System.Windows.Input.Key.V && (System.Windows.Input.Keyboard.Modifiers & System.Windows.Input.ModifierKeys.Control) == System.Windows.Input.ModifierKeys.Control)
-            {
-                MessageBox.Show("Coller est désactivé pour cet élément.", "Action non autorisée", MessageBoxButton.OK, MessageBoxImage.Warning);
-                e.Handled = true;
-            }
-        }
+       
 
         // Méthode pour vérifier si une chaîne est numérique
         private bool IsTextNumeric(string text)
